@@ -22,7 +22,7 @@ const TS = timesync.create({
 
 //#ef INIT
 function init() {
-  makeBarsPanel();
+  bars_makePanel();
 
   let ts_Date = new Date(TS.now());
   let tsNowEpochTime_MS = ts_Date.getTime();
@@ -60,13 +60,14 @@ function update() {
 //#endef Animation Engine
 
 //#ef Bars
+//Panel
 let bars_panel = {};
-bars_panel['title'] = "Tempi";
-let tempiCanvasClr = 'black';
-let bars_panel_H = 160;
+bars_panel['title'] = "Bars";
+let bars_canvasClr = 'black';
+let bars_panel_H = 480;
 let bars_panel_W = 912;
 
-function makebars_panel() {
+function bars_makePanel() {
   let tPanel = mkPanel({
     w: bars_panel_W,
     h: bars_panel_H,
@@ -84,9 +85,11 @@ function makebars_panel() {
     x: 0,
     y: 0,
   });
-  tSvg.style.backgroundColor = tempiCanvasClr;
+  tSvg.style.backgroundColor = bars_canvasClr;
   bars_panel['svg'] = tSvg;
 }
+//Staff Lines
+
 
 //#endef Bars
 
